@@ -14,20 +14,20 @@ def database(lang,token,key):
             compas(dadata)     
             continue
     else:
-        print("ошибка языка")  
+        print("ошибка токого языка в выбаре небыло ")  
           
 def compas(dadata):    
     print("введите нужное вам место положение")
     zapros = dadata.suggest(name="address", query=input(),language=lang)
     for i in range(len(zapros)):
         print(zapros[i]['value'])
-    print("уточните ваш адрес введя нужный вам адрес")
+    print("уточните ваш адрес введя введя один из предложанных адресов")
     adress = input()
     result=dadata.clean(name="address", source=adress)
     print(result['geo_lat'])
     print(result['geo_lon'])
     
-print("введите ваш token для доступа к Dadata и выберете язык введите влучаи неверного выбора програма закроеться")
+print("введите ваш token для доступа к Dadata и выберете язык ")
 print("ru для исползования Русского")
 print("en to use Еnglish")
 lang =  input()
